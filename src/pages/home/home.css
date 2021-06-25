@@ -1,0 +1,6 @@
+.home{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #eee;
+    padding-bottom: 100%;
+}
