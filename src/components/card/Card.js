@@ -1,31 +1,53 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./card.css";
-
-
+import axios from "axios";
+import { getMovies } from "../../redux/action/productaction";
 
 const Card = () => {
-  return (
-    <div className="card">
-      <img
-        src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg"
-        alt=""
-        className="photos"
-      />
-      <div className="title">Loki <hr/></div>
-      <div className="category">
-        <div className="time-date">
-          <span className="date"> 2021</span>
-          <span> 50min </span>
-        </div>
+  const movies = useSelector((state) => state.allmovies.movies);
+  const dispatch = useDispatch();
 
-        <div className="cat__type">Series</div>
+  const fetchmovies = async () => {
+    const res = await axios
+      .get(
+        "https://api.themoviedb.org/3/movie/550?api_key=aedb786bf1632adab2d897e9149fb89e"
+      )
+      .catch((err) => {
+        console.log("Err", err);
+      });
+    dispatch(getMovies(res.data));
+    console.log(res);
+  };
+
+  useEffect(() => {
+    fetchmovies();
+  });
+
+  return (
+    <div className="card_main">
+      {/* {movies?.map((m) => ( */}
+      <div className="card">
+        <div className="photos">
+          <img src={movies.poster_path} alt="" />
+        </div>
+        <div className="card_infos">
+          <div className="title">{movies.original_title}</div>
+          <div className="category">
+            <div className="time-date">
+              <span className="date"> {movies.release_date}</span>
+            </div>
+
+            <div className="time-date">
+              <span> {movies.runtime}min </span>
+            </div>
+
+            <div className="cat__type">serires</div>
+          </div>
+          <div className="desc">{movies.overview}</div>
+        </div>
       </div>
-      <div className="desc">
-        After stealing the Tesseract during the events of “Avengers: Endgame,”
-        an alternate version of Loki is brought to the mysterious Time Variance
-        Authority, a bureaucratic organization that exists outside of time and
-        space and monitors the timeline.
-      </div>
+      {/* ))} */}
     </div>
   );
 };
