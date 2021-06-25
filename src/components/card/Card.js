@@ -3,16 +3,25 @@ import "./card.css";
 
 const Card = () => {
   return (
-    <div className="card">
+    <div className="card_main">
+         <div className="card">
+      <div className="photos">
       <img
         src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg"
         alt=""
-        className="photos"
+        
       />
+      </div>
+      <div className="card_infos">
       <div className="title">Loki</div>
       <div className="category">
         <div className="time-date">
           <span className="date"> 2021</span>
+        
+        </div>
+
+        <div className="time-date">
+         
           <span> 50min </span>
         </div>
 
@@ -24,7 +33,13 @@ const Card = () => {
         Authority, a bureaucratic organization that exists outside of time and
         space and monitors the timeline.
       </div>
+      </div>
     </div>
+
+
+
+    </div>
+    
   );
 };
 

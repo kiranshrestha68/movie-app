@@ -1,8 +1,14 @@
-.home{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #eee;
+.home {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
 
-    padding-bottom: 100%;
+  background-color: #eee;
+
+  padding-bottom: 100%;
+}
+.home_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
