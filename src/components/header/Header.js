@@ -6,7 +6,7 @@ const Header = () => {
   
         <div className="header">
           <div className="left__header">
-            <h1> MovieApp</h1>
+            MovieApp
           </div>
           <div className="right__header">Search</div>
         </div>

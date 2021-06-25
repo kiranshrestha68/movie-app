@@ -1,6 +1,8 @@
 import React from "react";
 import "./card.css";
 
+
+
 const Card = () => {
   return (
     <div className="card">
@@ -9,7 +11,7 @@ const Card = () => {
         alt=""
         className="photos"
       />
-      <div className="title">Loki</div>
+      <div className="title">Loki <hr/></div>
       <div className="category">
         <div className="time-date">
           <span className="date"> 2021</span>

@@ -1,12 +1,18 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid black;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  width: 100%;
+  
+  
+}
 
-
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border-bottom: 1px solid black;
-    background-color: #000;
-    color: #fff;
+.left__header{
+    font-size: 30px;
+    font-weight:bold;
     
-
 }
