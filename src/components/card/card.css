@@ -47,13 +47,12 @@
   margin-right: 10px;
   border: 1px solid black;
   border-radius: 5px;
-  background-color:teal;
+  background-color: teal;
   color: #fff;
-  
 }
 
-.cat__type:hover{
-    background-color: rgb(47, 83, 17);
+.cat__type:hover {
+  background-color: rgb(47, 83, 17);
 }
 
 .desc {
