@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./card.css";
 import axios from "axios";
@@ -7,10 +7,11 @@ import {
   favourites,
   viewdetail,
 } from "../../redux/action/productaction";
-// import { connect } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Card = () => {
-const [buttonText, setButtonText] = useState("Add To Fav");
+  // const [buttonText, setButtonText] = useState("Add To Fav");
 
   const movies = useSelector((state) => state.allmovies.movies);
   // const movies = useSelector((state) => state.allmovies.movies);
@@ -32,7 +33,7 @@ const [buttonText, setButtonText] = useState("Add To Fav");
 
   useEffect(() => {
     fetchmovies();
-  },[]);
+  }, []);
 
   const getImage = (path) => `https://image.tmdb.org/t/p/w500/${path}`;
 
@@ -46,6 +47,16 @@ const [buttonText, setButtonText] = useState("Add To Fav");
 
   const gotofavourites = (id) => {
     dispatch(favourites(id));
+  };
+
+  const diffTost = () => {
+    toast.success("Added to favourite", {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: true,
+      pauseOnHover: false,
+      
+    });
   };
 
   return (
@@ -84,12 +95,16 @@ const [buttonText, setButtonText] = useState("Add To Fav");
               </div>
               <hr />
               <button
-              onClick={() => {gotofavourites(m); setButtonText("added")}}  
+                onClick={() => {
+                  gotofavourites(m);
+                  diffTost();
+                }}
                 className="Button__favourite"
-                
               >
-             {buttonText}
+                {/* {buttonText} */}
+                Add to favourite
               </button>
+              <ToastContainer />
               <div className="desc">{m.overview}</div>
             </div>
           </div>
@@ -98,6 +113,4 @@ const [buttonText, setButtonText] = useState("Add To Fav");
   );
 };
 
-
 export default Card;
-
