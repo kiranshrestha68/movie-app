@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./card.css";
 import axios from "axios";
@@ -11,9 +11,13 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Card = () => {
-  // const [buttonText, setButtonText] = useState("Add To Fav");
+
+  const [show, setShow] = useState(true);
 
   const movies = useSelector((state) => state.allmovies.movies);
+  const fav = useSelector((state) => state.allmovies.favourites);
+const favid = fav.map((fav) => fav.id)
+console.log(favid)
   // const movies = useSelector((state) => state.allmovies.movies);
 
   const dispatch = useDispatch();
@@ -45,8 +49,11 @@ const Card = () => {
     dispatch(viewdetail(is));
   };
 
-  const gotofavourites = (id) => {
-    dispatch(favourites(id));
+  const gotofavourites = (m) => {
+  
+   
+    dispatch(favourites(m));
+    fetchmovies();
   };
 
   const diffTost = () => {
@@ -55,7 +62,6 @@ const Card = () => {
       autoClose: 1000,
       hideProgressBar: true,
       pauseOnHover: false,
-      
     });
   };
 
@@ -94,19 +100,18 @@ const Card = () => {
                 ))}
               </div>
               <hr />
-              <button
-                onClick={() => {
-                  gotofavourites(m);
-                  diffTost();
-                }}
-                className="Button__favourite"
-              >
-                {/* {buttonText} */}
-                Add to favourite
+              {favid.includes(m.id) ?
+                <button  onClick={(e) => gotofavourites(m)} className="Button__favourite">
+                 Added to fav
               </button>
+              :
+              <button onClick={(e) => gotofavourites(m)}  className="Button__favourite">
+              Add to fav
+           </button>
+              }
               <ToastContainer />
               <div className="desc">{m.overview}</div>
-            </div>
+            </div>  
           </div>
         ))}
     </div>
