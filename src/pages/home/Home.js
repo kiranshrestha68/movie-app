@@ -1,22 +1,15 @@
-import React from 'react';
-import "./home.css"
-import Card from '../../components/card/Card'
+import React from "react";
+import "./home.css";
+import Card from "../../components/card/Card";
 
 const Home = () => {
-    return (
-        <div className="home">
-     <div className="home_container">
-            <Card/>
-           
-            
-           
-            </div>
-                 
+  return (
+    <div className="home">
+      <div className="top__movie">Top Movies </div>
+      
+      <Card />
+    </div>
+  );
+};
 
-        </div>
-        
-       
-    )
-}
-
-export default Home
+export default Home;

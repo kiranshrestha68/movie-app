@@ -1,15 +1,17 @@
 .card_main {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card {
   background-image: linear-gradient(to right, #f5f5f5, #c8edf3);
   /* padding: 110px; */
-  margin: 10px;
+  margin: 5px;
   /* margin-bottom: 100px; */
 
   border-radius: 20px;
-  width: 290px;
+  width: 250px;
   box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
@@ -63,17 +65,37 @@
   padding: 2px;
   font-family: "Roboto", sans-serif;
 
-  /* margin-right: 10px; */
   border: none;
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
   background-color: teal;
   color: #fff;
+  font-size: 15px;
+ 
 }
 
 .cat__type:hover {
   transition: 400ms linear;
   background-color: #000;
+}
+
+.Button__favourite{
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 10px;
+  margin: 10px 10px;
+  border: none;
+  background-color: #a54c4c;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 8px 12px 0 rgba(210, 15, 15, 0.302);
+  
+}
+
+.Button__favourite:hover{
+  background-color: #dd2f2f;
+  color: #000002;
 }
 
 .desc {
