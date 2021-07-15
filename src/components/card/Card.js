@@ -11,7 +11,7 @@ const Card = () => {
   const fetchmovies = async () => {
     const res = await axios
       .get(
-        "https://api.themoviedb.org/3/movie/550?api_key=aedb786bf1632adab2d897e9149fb89e"
+        "https://api.themoviedb.org/3/movie/552?api_key=aedb786bf1632adab2d897e9149fb89e"
       )
       .catch((err) => {
         console.log("Err", err);
