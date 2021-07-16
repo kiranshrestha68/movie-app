@@ -33,18 +33,28 @@ const Singlepage = () => {
             </div>
 
             <div className="movie__info">
-              <div className="infos"> Genre: Action, Horror, Thriller</div>
-              <div className="infos"> July 9, 2021</div>
-              <div className="infos"> Director: Adam chacha </div>
               <div className="infos">
                 {" "}
-                Avianah Abrashah, Carlito Liveroo, Holland Rodes, James Feains,
-                Jay Ecring, Loagan Miller{" "}
+                Genre:{" "}
+                <span className="infos__ans"> Action, Horror, Thriller</span>
+              </div>
+              <div className="infos">
+                {" "}
+                Release: <span className="infos__ans"> July 9, 2021 </span>
+              </div>
+              <div className="infos">
+                {" "}
+                Director: <span className="infos__ans"> Adam chacha</span>
+              </div>
+              <div className="infos">
+                Cast:{" "}
+                <span className="infos__ans">
+                  Avianah Abrashah, Carlito Liveroo, Holland Rodes, James
+                  Feains, Jay Ecring, Loagan Miller
+                </span>
               </div>
             </div>
-            <button className="watch__now">
-                Watch Now
-            </button>
+            <button className="watch__now">Watch Now</button>
           </div>
         </div>
       </div>
