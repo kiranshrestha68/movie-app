@@ -35,12 +35,14 @@
   flex-direction: column;
   padding: 10px;
 }
-.title {
+.titles {
   text-align: center;
   font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  font-size: 30px;
+
+  font-size: 20px;
+  font-weight: bolder;
   margin-bottom: 10px;
+  font-family: "Encode Sans SC", sans-serif;
 }
 
 .category {
@@ -71,7 +73,11 @@
   background-color: teal;
   color: #fff;
   font-size: 15px;
- 
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
 }
 
 .cat__type:hover {
@@ -79,7 +85,7 @@
   background-color: #000;
 }
 
-.Button__favourite{
+.Button__favourite {
   padding: 10px;
   margin-top: 8px;
   border-radius: 10px;
@@ -90,10 +96,9 @@
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 0 8px 12px 0 rgba(210, 15, 15, 0.302);
-  
 }
 
-.Button__favourite:hover{
+.Button__favourite:hover {
   background-color: #dd2f2f;
   color: #000002;
 }

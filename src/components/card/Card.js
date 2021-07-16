@@ -9,10 +9,11 @@ import {
 } from "../../redux/action/productaction";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {Link } from "react-router-dom";
 
 const Card = () => {
 
-  const [show, setShow] = useState(true);
+  // const [show, setShow] = useState(true);
 
   const movies = useSelector((state) => state.allmovies.movies);
   const fav = useSelector((state) => state.allmovies.favourites);
@@ -76,7 +77,7 @@ console.log(favid)
               <img src={getImage(m.poster_path)} alt="" />
             </div>
             <div className="card_infos">
-              <div className="title">
+              <div className="titles">
                 {m.original_title} <hr />
               </div>
               <div className="category">
@@ -89,10 +90,13 @@ console.log(favid)
                 </div>
 
                 <div onClick={() => gotoviewdetail(m)} className="cat__type">
-                  View Detail
+                <Link className="link" to={`view-detail/${m.id}`}>
+                View Detail
+                </Link>
+                 
                 </div>
               </div>
-              <hr />
+             
               <div>
                 {m.genre_ids.map((kiran) => (
                   /* console.log(kiran); */
