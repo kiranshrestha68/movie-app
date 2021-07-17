@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <div>
-          <Header />
+          <Header/>
           <Route exact path="/" component={Home}/>
           <Route exact path="/favourites" component={Favourite}/>
           <Route exact path="/view-detail/:id" component={Singlepage}/>

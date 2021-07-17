@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./card.css";
 import axios from "axios";
@@ -7,8 +7,8 @@ import {
   favourites,
   viewdetail,
 } from "../../redux/action/productaction";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 import {Link } from "react-router-dom";
 
 const Card = () => {
@@ -57,14 +57,14 @@ console.log(favid)
     fetchmovies();
   };
 
-  const diffTost = () => {
-    toast.success("Added to favourite", {
-      position: "top-center",
-      autoClose: 1000,
-      hideProgressBar: true,
-      pauseOnHover: false,
-    });
-  };
+  // const diffTost = () => {
+  //   toast.success("Added to favourite", {
+  //     position: "top-center",
+  //     autoClose: 1000,
+  //     hideProgressBar: true,
+  //     pauseOnHover: false,
+  //   });
+  // };
 
   return (
     <div className="card_main">
@@ -113,7 +113,7 @@ console.log(favid)
               Add to fav
            </button>
               }
-              <ToastContainer />
+              {/* <ToastContainer /> */}
               <div className="desc">{m.overview}</div>
             </div>  
           </div>

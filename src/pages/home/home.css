@@ -1,5 +1,6 @@
 .home {
   background-color: #eee;
+  scroll-behavior: smooth;
 }
 
 .top__movie {
@@ -9,6 +10,8 @@
  
   margin-bottom: 20px;
   margin-left: 150px;
+ 
+  
   /* border: 1px solid black; */
   
 

@@ -2,16 +2,40 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-bottom: 8px solid grey;
+  /* border-bottom: 8px solid grey; */
   background-color: #000;
-  color: #fff;
+  /* color: #fff; */
   padding: 20px;
+  height: 15px;
   width: 100%;
+  font-family: "Encode Sans SC", sans-serif;
+  position: sticky;
+  top: 0;
+
+}
+
+.menu_active {
+  border-bottom:2px solid white;
 }
 
 .left__header {
   font-size: 30px;
   font-weight: bold;
+}
+
+.middle__header__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link__header {
+  text-decoration: none;
+  padding: 10px;
+  color: wheat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .right__header {
@@ -28,6 +52,12 @@
   font-size: 15px;
   padding-left: 5px;
   outline: none;
+}
+
+.middle__header__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search {

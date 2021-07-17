@@ -1,7 +1,15 @@
 import React from "react";
 import "./singlepage.css";
+import { useSelector } from "react-redux";
+
 
 const Singlepage = () => {
+
+
+  const moviedetail = useSelector((state) => state.allmovies.moviedetail);
+  const getImage = (path) => `https://image.tmdb.org/t/p/w500/${path}`;
+
+
   return (
     <>
       <div className="singlePage">
@@ -10,26 +18,20 @@ const Singlepage = () => {
             <div className="image__s">
               <img
                 className="image"
-                src="https://fmoviefree.net/images/tt9844522/poster.jpg"
+                src={getImage(moviedetail.poster_path)}
                 alt=""
               />
             </div>
           </div>
           <div className="row__2">
-            <div className="title"> Escape Room: Tounament of Champions</div>
+            <div className="title"> {moviedetail.title}</div>
             <div className="category">
               <span className="quality">hd</span>
               <span className="time"> 80 min </span>
-              <span className="rating"> Imdb : 9.1</span>
+              <span className="rating"> Imdb : {moviedetail.vote_average}</span>
             </div>
             <div className="overview">
-              Voluptate do aliquip elit nisi laboris sunt quis id reprehenderit
-              aliqua deserunt culpa anim. Irure consequat adipisicing nostrud
-              proident excepteur culpa labore nulla occaecat. Sunt non nulla est
-              laboris pariatur sunt. Officia nostrud labore ad nostrud proident
-              excepteur cillum qui deserunt dolore eiusmod aliquip proident
-              voluptate. Ea dolor in laboris nisi pariatur cupidatat laboris
-              esse elit.
+           {moviedetail.overview}
             </div>
 
             <div className="movie__info">
@@ -40,7 +42,7 @@ const Singlepage = () => {
               </div>
               <div className="infos">
                 {" "}
-                Release: <span className="infos__ans"> July 9, 2021 </span>
+                Release: <span className="infos__ans"> {moviedetail.release_date} </span>
               </div>
               <div className="infos">
                 {" "}
